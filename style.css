@@ -1,0 +1,469 @@
+/* ==============================================================
+   Personal site — stylesheet
+   ============================================================== */
+
+@font-face {
+  font-family: "MarklMono";
+  src: url("fonts/MarklMono-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montilge";
+  src: url("fonts/Montilge.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Zevant";
+  src: url("fonts/Zevant.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+:root {
+  /* --- colours ------------------------------------------------ */
+  --bg:         #16160b;
+  --text:       #dcdcdb;   /* body text */
+  --rule:       rgba(220, 220, 219, 0.45);   /* line dividers — lower the last number for fainter */
+  --link:       #a4b39b;
+  --link-hover: #6d7864;
+
+  /* --- type --------------------------------------------------- */
+  --heading: "Montilge", Georgia, "Times New Roman", Times, serif;   /* landing page only */
+  --serif: "Montilge", Georgia, "Times New Roman", Times, serif;   /* landing page only */
+  --mono:  "MarklMono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+           "Liberation Mono", monospace;               /* everywhere else */
+
+  --fs:         10px;   /* ONE size for all main pages: headers = body text */
+  --fs-landing: 14px;   /* landing page only */
+  --lh: 1.8;
+
+  /* --- misc knobs --------------------------------------------- */
+  --rule-weight: 0.5px;   /* hairline on high-res screens; 1px on standard ones */
+  --track:       0.01em;   /* body letter-spacing */
+  --track-wide:  0.16em;   /* the wider-tracked line on WORKS */
+}
+
+/* Light mode — toggled via data-theme on <html>. */
+html[data-theme="light"] {
+  --bg:         #F3F1E4;
+  --text:       #242020;
+  --rule:       rgba(36, 32, 32, 0.28);
+  --link:       #5a6b52;
+  --link-hover: #3f4a3a;
+}
+
+/* --- reset ---------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Hide the scrollbar but keep scrolling working */
+html {
+  /* Paint the page colour behind everything, so the browser never
+     shows its default white between or during page changes. */
+  background: var(--bg);
+  color-scheme: dark;
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* old Edge / IE */
+}
+html[data-theme="light"] { color-scheme: light; }
+html::-webkit-scrollbar,
+body::-webkit-scrollbar { width: 0; height: 0; display: none; }  /* Chrome, Safari */
+
+body {
+  /* Derived from --fs. Declared on body (not :root) so they
+     recalculate when the landing page swaps in its own size. */
+  --line:       calc(var(--fs) * var(--lh));   /* one line of text — all vertical spacing */
+  --topbar-pad: calc(var(--line) * 1.6);
+
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: var(--fs);
+  line-height: var(--lh);
+  letter-spacing: var(--track);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--link-hover); }
+a:focus-visible { outline: 1px solid var(--link); outline-offset: 3px; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* --- reusable pieces ------------------------------------------ */
+
+/* Thin line divider. Bump --rule-weight if you want it heavier. */
+.divider {
+  border: 0;
+  border-top: var(--rule-weight) solid var(--rule);
+  margin: 0;
+}
+
+/* Blank-line spacers. <div class="space-2"></div> == two empty lines. */
+.space-1 { height: var(--line); }
+.space-2 { height: calc(var(--line) * 2); }
+.space-3 { height: calc(var(--line) * 3); }
+
+/* Page headers are the same size as body text — only tracking differs. */
+.page-title {
+  font-family: var(--serif);
+  font-size: 1em;
+  font-weight: normal;
+  letter-spacing: var(--track-wide);
+  margin: 0;
+}
+
+/* ==============================================================
+   LANDING PAGE
+   ============================================================== */
+
+body.landing {
+  --fs: var(--fs-landing);
+  font-family: var(--serif);
+}
+
+.landing-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--line);
+}
+
+/* The whole landing block sits centred and takes ~20% of the width. */
+.landing-inner {
+  width: 20%;
+  min-width: 210px;
+  text-align: center;
+}
+
+.landing-name {
+  font-family: var(--heading);
+  font-size: 1.15rem;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+  margin: 0 0 var(--line);
+}
+
+.landing-img { margin: 0 0 calc(var(--line) * 1.5); }
+
+.landing-nav a {
+  display: block;
+  margin: 0.35em 0;
+  letter-spacing: 0.08em;
+}
+
+/* Small theme toggle under the landing nav. */
+.landing-theme {
+  display: inline-flex;
+  margin: 0 auto;
+  height: auto;
+  opacity: 0.7;
+}
+.landing-theme .theme-icon { font-size: 12px; }
+
+/* ==============================================================
+   MAIN PAGES — 30 / 40 / 30
+   ============================================================== */
+
+.page {
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  min-height: 100vh;
+}
+
+.main {
+  grid-column: 2;                              /* the middle 40% */
+  padding-top: calc(var(--line) * 2);          /* gap below the top bar */
+  padding-bottom: calc(var(--line) * 6);
+}
+
+/* --- pinned top bar ------------------------------------------- */
+/* Same 30 / 40 / 30 columns as the page, so the title and tagline
+   line up with the content. Sticky (not fixed), so it grows to fit
+   a tagline without overlapping anything. */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  align-items: start;
+  padding: var(--topbar-pad) 0;
+  background: var(--bg);
+}
+
+/* Home pushpin + theme toggle share the left column. */
+.topbar-start {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 2.5em;
+  height: var(--line);
+  margin-left: calc(var(--topbar-pad) * 1.4);
+}
+
+.home {
+  display: inline-flex;
+  align-items: center;
+  height: var(--line);
+}
+/* The pushpin. Emoji ignore text colour, so hover dims it instead. */
+.home-icon { font-size: 15px; line-height: 1; }
+.home:hover .home-icon { opacity: 0.6; }
+
+.theme-toggle {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  height: var(--line);
+  font: inherit;
+  color: var(--text);
+  cursor: pointer;
+  line-height: 1;
+}
+.theme-toggle:hover { opacity: 0.6; }
+.theme-toggle:focus-visible {
+  outline: 1px solid var(--link);
+  outline-offset: 3px;
+}
+.theme-icon { font-size: 14px; line-height: 1; }
+
+.page-title { line-height: var(--line); }
+
+.page-tagline {
+  margin: calc(var(--line) * 0.5) 0 0;   /* half-line gap below the title */
+  letter-spacing: var(--track);          /* same as body text */
+}
+
+.topnav {
+  justify-self: end;
+  margin-right: calc(var(--topbar-pad) * 1.4);
+  line-height: var(--line);
+}
+
+.topnav a {
+  margin-left: 2.4em;
+  font-family: var(--serif);
+  letter-spacing: var(--track-wide);
+}
+
+/* --- 1 : 2 two-column rows ------------------------------------ */
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: calc(var(--line) * 1.5);
+}
+
+/* The title fills ~70% of the left column. */
+.col-title { width: 70%; }
+
+.col-body p { margin: 0 0 var(--line); }
+.col-body p:last-child { margin-bottom: 0; }
+
+/* ==============================================================
+   ABOUT
+   ============================================================== */
+
+/* Resize the About image by changing this one width value. */
+.about-img { display: block; width: 50%; margin: 0 auto; }
+
+.about-text p { margin: 0 0 var(--line); }
+.about-text p:last-child { margin-bottom: 0; }
+
+/* ==============================================================
+   WORKS
+   ============================================================== */
+
+/* Filter row sits above the first work divider. */
+.work-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 2.4em;
+  padding-bottom: var(--line);
+  letter-spacing: var(--track-wide);
+}
+
+.work-filters button {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: var(--link);
+  letter-spacing: inherit;
+  cursor: pointer;
+}
+
+.work-filters button:hover { color: var(--link-hover); }
+.work-filters button:focus-visible {
+  outline: 1px solid var(--link);
+  outline-offset: 3px;
+}
+.work-filters button.is-active { color: var(--text); }
+
+/* Each work: a divider above, one line of space above and below.
+   The last visible work also gets a closing divider. */
+.work {
+  border-top: var(--rule-weight) solid var(--rule);
+  padding: var(--line) 0;
+}
+.work.is-hidden { display: none; }
+.work.is-last-visible { border-bottom: var(--rule-weight) solid var(--rule); }
+
+/* Image or slideshow: full column width, one line above the text. */
+.work-img,
+.work-series { width: 100%; margin-bottom: var(--line); }
+
+/* Links under a work (project page, website, PDF…). */
+.work-links a { margin-right: 1.6em; }
+.work-links a:last-child { margin-right: 0; }
+
+/* Slideshow counter sits at the right, under the image. */
+.work-series .series-count { text-align: right; }
+
+/* ==============================================================
+   CV
+   ============================================================== */
+
+.cv-section { margin-bottom: calc(var(--line) * 2); }
+.cv-section:last-child { margin-bottom: 0; }
+
+.cv-entry { margin-bottom: var(--line); }
+.cv-entry:last-child { margin-bottom: 0; }
+
+.cv-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--line);
+}
+.cv-updated { margin: 0; }
+
+/* Outlined button — used for "Download PDF". */
+.button {
+  display: inline-block;
+  padding: 0.4em 1.1em;
+  border: 0.5px solid var(--link);
+  letter-spacing: var(--track-wide);
+  text-transform: uppercase;
+}
+.button:hover { border-color: var(--link-hover); }
+
+/* ==============================================================
+   GALLERY
+   ============================================================== */
+
+/* Default width 60%, centred. Override one item with
+   style="--item-width: 40%" (or any %) on the <figure>. */
+.gallery-item {
+  width: var(--item-width, 60%);
+  margin: 0 auto calc(var(--line) * 3);
+  text-align: center;
+}
+.gallery-item:last-child { margin-bottom: 0; }
+
+.gallery-caption { margin-top: var(--line); }
+.gallery-caption span { display: block; }
+
+/* --- image series (click left / right) ------------------------ */
+.series { position: relative; }
+
+.series-frame { position: relative; }
+
+.series-img { display: none; width: 100%; }
+.series-img.is-active { display: block; }
+
+.series-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: 0;
+  padding: 0.5em 0.7em;
+  font: inherit;
+  letter-spacing: 0;
+  color: var(--link);
+  cursor: pointer;
+}
+.series-nav:hover { color: var(--link-hover); }
+.series-nav.prev { left: 0.3em; }
+.series-nav.next { right: 0.3em; }
+
+.series-count { margin-top: calc(var(--line) * 0.5); }
+
+/* ==============================================================
+   MISC
+   ============================================================== */
+
+.misc-text p { margin: 0 0 var(--line); }
+.misc-text p:last-child { margin-bottom: 0; }
+
+/* ==============================================================
+   NARROW SCREENS
+   The 30/40/30 grid collapses so the site stays readable on a phone.
+   ============================================================== */
+
+@media (max-width: 800px) {
+  .page { grid-template-columns: 8% 84% 8%; }
+  .landing-inner { width: 60%; }
+  .cols { grid-template-columns: 1fr; row-gap: var(--line); }
+  .col-title { width: 100%; }
+  .gallery-item { width: 100%; }
+  .topnav a { margin-left: 1.4em; }
+  /* Top bar: icon | title + tagline | links, without column alignment. */
+  .topbar {
+    grid-template-columns: auto 1fr auto;
+    padding: var(--topbar-pad) calc(var(--topbar-pad) * 1.1);
+  }
+  .topbar-start { margin-left: 0; }
+  .page-head { margin-left: 1.4em; }
+  .topnav { margin-right: 0; }
+  .cv-footer { flex-direction: column; align-items: flex-start; }
+}
+
+/* ==============================================================
+   PAGE TRANSITIONS
+   Cross-fade between pages. Change the duration to taste.
+   Chrome, Edge and Safari 18.2+ cross-fade both pages; other
+   browsers get a simple fade-in of the new page instead.
+   ============================================================== */
+
+:root { --page-fade: 0.6s; }
+
+@view-transition { navigation: auto; }
+
+/* Solid backdrop behind the two fading snapshots.
+   A variable here can fail to resolve and show the white canvas. */
+::view-transition { background: #16160b; }
+html[data-theme="light"]::view-transition { background: #F3F1E4; }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: var(--page-fade);
+  animation-timing-function: ease-in-out;
+}
+
+@supports not (view-transition-name: none) {
+  body { animation: page-in var(--page-fade) ease-out; }
+}
+@keyframes page-in { from { opacity: 0; } to { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+  ::view-transition-old(root),
+  ::view-transition-new(root) { animation: none !important; }
+}

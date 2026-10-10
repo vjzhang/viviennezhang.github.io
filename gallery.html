@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="Selected drawings, paintings, and other works.">
+<title>Gallery — Vivienne Z.</title>
+<link rel="stylesheet" href="style.css">
+<script>
+try {
+  var light = localStorage.getItem('theme') === 'light';
+  var root = document.documentElement;
+  if (light) root.setAttribute('data-theme', 'light');
+  root.style.backgroundColor = light ? '#F3F1E4' : '#16160b';
+  root.style.colorScheme = light ? 'light' : 'dark';
+} catch (e) {}
+</script>
+</head>
+
+<body>
+
+<!-- ===== pinned top bar (all three main pages) ===== -->
+<header class="topbar">
+  <div class="topbar-start">
+    <a class="home" href="index.html" aria-label="Back to home">
+      <span class="home-icon" aria-hidden="true">&#x1F4CC;</span>
+    </a>
+    <button type="button" class="theme-toggle" aria-label="Switch to light mode" aria-pressed="false">
+      <span class="theme-icon" aria-hidden="true">&#x2600;</span>
+    </button>
+  </div>
+  <div class="page-head">
+    <h1 class="page-title">GALLERY</h1>
+  </div>
+  <nav class="topnav">
+    <a href="about.html">About</a>
+    <a href="works.html">Works</a>
+    <a href="cv.html">CV</a>
+  </nav>
+</header>
+
+<!-- ===== 30 / 40 / 30 ===== -->
+<div class="page">
+  <main class="main">
+
+    <hr class="divider">
+
+    <div class="space-3"></div>
+
+    <figure class="gallery-item">
+        <img src="image/UNDERGROUND.jpg" alt="Oil painting of a window at an underground station">
+        <figcaption class="gallery-caption">
+          <span>Underground</span>
+          <span>2022</span>
+          <span>Oil on canvas</span>
+          <span>20'' &times; 16''</span>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item" style="--item-width: 30%;">
+        <img src="image/Alyosha_2023.jpg" alt="Portrait of a young man">
+        <figcaption class="gallery-caption">
+          <span>2023</span>
+          <span>Oil on canvas</span>
+          <span>9'' &times; 12''</span>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="image/Where_they_fell_silent.jpg" alt="Oil painting of trees on a grassfield as seen from a moving vehicle.">
+        <figcaption class="gallery-caption">
+          <span>2022</span>
+          <span>Oil on canvas</span>
+          <span>20'' &times; 16''</span>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item series" data-series style="--item-width: 100%;">
+        <div class="series-frame">
+          <img class="series-img is-active" src="image/MFM1.png" alt="costume and set design drawings for the play Measure For Measure by William Shakespeare">
+          <img class="series-img" src="image/MFM2.png" alt="">
+          <img class="series-img" src="image/MFM3.PNG" alt="">
+          <button class="series-nav prev" type="button" aria-label="Previous image">&larr;</button>
+          <button class="series-nav next" type="button" aria-label="Next image">&rarr;</button>
+        </div>
+        <div class="series-count"><span class="cur">1</span> / <span class="total">3</span></div>
+        <figcaption class="gallery-caption">
+          <span><i>Measure For Measure</i>, costume and set.</span>
+          <span>2024</span>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item" style="--item-width: 80%;">
+        <img src="image/fsc-script.png" alt="">
+        <figcaption class="gallery-caption">
+          <span>Constructed script design.</span>
+          <span>2023</span>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="image/beaumont-env.jpeg" alt="a set of environment art made for the interactive fiction game Beaumont.">
+        <figcaption class="gallery-caption">
+          <span><i>Beaumont</i>, environment art.</span>
+          <span>2026</span>
+        </figcaption>
+      </figure>
+
+    <!-- ==========================================================
+         SINGLE IMAGE
+         Resize one item: style="--item-width: 40%" (default 60%).
+         ==========================================================
+
+    <figure class="gallery-item">
+      <img src="placeholder.svg" alt="">
+      <figcaption class="gallery-caption">
+        <span>Another Title</span>
+        <span>2025</span>
+        <span>Graphite on paper</span>
+        <span>30 &times; 21 cm</span>
+      </figcaption>
+    </figure> -->
+
+    <!-- ==========================================================
+         IMAGE SERIES
+         Add or remove <img> tags inside .series-frame.
+         Resize one series: style="--item-width: 80%"
+         ==========================================================
+    <figure class="gallery-item series" data-series>
+      <div class="series-frame">
+        <img class="series-img is-active" src="placeholder.svg" alt="">
+        <img class="series-img" src="placeholder.svg" alt="">
+        <img class="series-img" src="placeholder.svg" alt="">
+        <button class="series-nav prev" type="button" aria-label="Previous image">&larr;</button>
+        <button class="series-nav next" type="button" aria-label="Next image">&rarr;</button>
+      </div>
+      <div class="series-count"><span class="cur">1</span> / <span class="total">3</span></div>
+      <figcaption class="gallery-caption">
+        <span>Title of the Series</span>
+        <span>2024</span>
+        <span>Screenprint</span>
+        <span>42 &times; 29.7 cm each</span>
+      </figcaption>
+    </figure> -->
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

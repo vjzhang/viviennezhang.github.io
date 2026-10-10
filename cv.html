@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="Curriculum vitae of Your Name: education, research experience, internships, skills, and awards.">
+<title>CV — Vivienne Z.</title>
+<link rel="stylesheet" href="style.css">
+<script>
+try {
+  var light = localStorage.getItem('theme') === 'light';
+  var root = document.documentElement;
+  if (light) root.setAttribute('data-theme', 'light');
+  root.style.backgroundColor = light ? '#F3F1E4' : '#16160b';
+  root.style.colorScheme = light ? 'light' : 'dark';
+} catch (e) {}
+</script>
+</head>
+
+<body>
+
+<!-- ===== pinned top bar ===== -->
+<header class="topbar">
+  <div class="topbar-start">
+    <a class="home" href="index.html" aria-label="Back to home">
+      <span class="home-icon" aria-hidden="true">&#x1F4CC;</span>
+    </a>
+    <button type="button" class="theme-toggle" aria-label="Switch to light mode" aria-pressed="false">
+      <span class="theme-icon" aria-hidden="true">&#x2600;</span>
+    </button>
+  </div>
+  <div class="page-head">
+    <h1 class="page-title">CV</h1>
+  </div>
+  <nav class="topnav">
+    <a href="about.html">About</a>
+    <a href="works.html">Works</a>
+  </nav>
+</header>
+
+<!-- ===== 30 / 40 / 30 ===== -->
+<div class="page">
+  <main class="main">
+
+    <hr class="divider">
+
+    <div class="space-1"></div>
+
+    <!-- ===== Education ===== -->
+    <section class="cv-section cols">
+      <div>
+        <div class="col-title">Education</div>
+      </div>
+      <div class="col-body">
+        <div class="cv-entry">
+          <p><b>The University of Chicago</b><br>
+            2023–2027 &middot; B.A. in Linguistics, Minor in Computer Science</p>
+        </div>
+        <div class="cv-entry">
+          <p><b>St. Catherine’s College, the University of Oxford</b><br>
+            Oct - Dec 2025 &middot; Visiting student</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Research Experience ===== -->
+    <section class="cv-section cols">
+      <div>
+        <div class="col-title">Research Experience</div>
+      </div>
+      <div class="col-body">
+        <div class="cv-entry">
+          <p><b>Felicity Conditions and Relevance in Non-Answering Replies to Polar Questions</b><br>
+            BA Honours Thesis (Supervised by Prof. Chris Kennedy) <br>
+            Aug 2026 - present</p>
+        </div>
+        <div class="cv-entry">
+            <p><b>Mechanistic Analysis of LLM Commissive Sensitivity</b>
+            <br>
+            Individual project (Supervised by Dr. Zhewei Sun, Toyota Technological Institute at Chicago)<br>
+            June 2026 - present
+             </p>
+        </div>
+        <div class="cv-entry">
+            <p><b>LLM Persona Collapse and Homogenization (<a href="https://arxiv.org/abs/2604.24698v1" target="_blank">preprint</a>)</b>
+            <br>
+            Research Collaborator<br>
+            Oct 2025 - April 2026
+             </p>
+        </div>
+        <div class="cv-entry">
+            <p><b>Dajing Documentation Project (language <a href="https://dajingarchive.wordpress.com/" target="_blank" rel="noopener">documentation</a>)</b><br>
+            Primary researcher (PI: Prof. Lenore Grenoble)<br>
+            June - Dec 2025 (on hiatus)
+             </p>
+        </div>
+        <div class="cv-entry">
+            <p><b>Second Language Acquisition Group, McGill University</b><br>
+            Research Assistant (Director: Prof. Heather Goad & Prof. Lydia White)<br>
+            June - Sep 2025
+             </p>
+        </div>
+        <div class="cv-entry">
+            <p><b>The Phonology Laboratory, the University of Chicago</b><br>
+            Research Assistant (Director: Prof. Alan C.L. Yu)<br>
+            Aug 2023 - May 2025
+            </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Presentations ===== -->
+    <section class="cv-section cols">
+        <div>
+          <div class="col-title">Presentations</div>
+        </div>
+        <div class="col-body">
+          <div class="cv-entry">
+            <p><i>“The Chameleon's Limit: Investigating Persona Collapse and Homogenization in Large Language Models”</i>.<br>
+                Poster presented at UChicago Undergraduate Research Symposium, 2026. </p>
+          </div>
+        </div>
+      </section>
+
+    <!-- ===== Internships ===== -->
+    <section class="cv-section cols">
+      <div>
+        <div class="col-title">Internships</div>
+      </div>
+      <div class="col-body">
+        <div class="cv-entry">
+          <p>Narrative Intern, <i><a href="https://www.sevakhusid.games/ha-na" target="_blank" rel="noopener">Harvest of Names</a></i>, Servellina<br>
+            June - August 2025
+            </p>
+        </div>
+        <div class="cv-entry">
+            <p>User Experience Intern, Kigui <br>
+              June - August 2024
+              </p>
+          </div>
+      </div>
+    </section>
+
+    <!-- ===== Skills ===== -->
+    <section class="cv-section cols">
+      <div>
+        <div class="col-title">Skills</div>
+      </div>
+      <div class="col-body">
+        <div class="cv-entry">
+          <p>Praat, ELAN<br>
+            Familiarity with FLEx and Python<br>
+            Experiment design in Qualtrics and Gorilla<br>
+            LLM-as-judge evaluation pipelines, familiarity with model serving via vLLM/HuggingFace
+            </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Languages ===== -->
+    <section class="cv-section cols">
+        <div>
+          <div class="col-title">Languages</div>
+        </div>
+        <div class="col-body">
+          <div class="cv-entry">
+              <p>Mandarin (native); English & French (fluent)</p>
+          </div>
+        </div>
+      </section>
+
+    <!-- ===== Awards ===== -->
+    <section class="cv-section cols">
+      <div>
+        <div class="col-title">Honors & Awards</div>
+      </div>
+      <div class="col-body">
+        <div class="cv-entry">
+          <p>Robert Maynard Hutchins Scholars (2025)<br>
+            Seidel Scholar Grant (2025)<br>
+            Phi Beta Kappa (2026)<br>
+            Georgiana Simpson Scholar in the Humanities Collegiate Division (2026) <br>
+            </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CV footer ===== -->
+    <hr class="divider">
+    <div class="space-1"></div>
+
+    <div class="cv-footer">
+      <p class="cv-updated">Last updated: October 2026</p>
+      <!-- Put your PDF next to this file and name it cv.pdf (or change the href). -->
+      <a class="button" href="files/2026_CV_research.pdf" target="_blank">PDF</a>
+    </div>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

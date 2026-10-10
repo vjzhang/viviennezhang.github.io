@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="Vivienne J. Zhang | Student in Linguistics">
+<title>Vivienne Z.</title>
+<link rel="stylesheet" href="style.css">
+<script>
+try {
+  var light = localStorage.getItem('theme') === 'light';
+  var root = document.documentElement;
+  if (light) root.setAttribute('data-theme', 'light');
+  root.style.backgroundColor = light ? '#F3F1E4' : '#16160b';
+  root.style.colorScheme = light ? 'light' : 'dark';
+} catch (e) {}
+</script>
+</head>
+
+<body class="landing">
+<div class="landing-wrap">
+  <div class="landing-inner">
+
+    <div class="space-3"></div>
+    <h1 class="landing-name">VIVIENNE J. ZHANG</h1>
+
+    <!-- Swap the src for your own image. -->
+    <img class="landing-img" src="image/UNDERGROUND.jpg" alt="">
+
+    <nav class="landing-nav">
+      <a href="about.html">ABOUT</a>
+      <a href="works.html">WORKS</a>
+      <a href="cv.html">CV</a>
+    </nav>
+
+    <div class="space-3"></div>
+
+    <button type="button" class="theme-toggle landing-theme" aria-label="Switch to light mode" aria-pressed="false">
+      <span class="theme-icon" aria-hidden="true">&#x2600;</span>
+    </button>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

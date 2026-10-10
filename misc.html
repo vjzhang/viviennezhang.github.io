@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="Miscellaneous notes.">
+<title>Misc. — Vivienne Z.</title>
+<link rel="stylesheet" href="style.css">
+<script>
+try {
+  var light = localStorage.getItem('theme') === 'light';
+  var root = document.documentElement;
+  if (light) root.setAttribute('data-theme', 'light');
+  root.style.backgroundColor = light ? '#F3F1E4' : '#16160b';
+  root.style.colorScheme = light ? 'light' : 'dark';
+} catch (e) {}
+</script>
+</head>
+
+<body>
+
+<!-- ===== pinned top bar (all three main pages) ===== -->
+<header class="topbar">
+  <div class="topbar-start">
+    <a class="home" href="index.html" aria-label="Back to home">
+      <span class="home-icon" aria-hidden="true">&#x1F4CC;</span>
+    </a>
+    <button type="button" class="theme-toggle" aria-label="Switch to light mode" aria-pressed="false">
+      <span class="theme-icon" aria-hidden="true">&#x2600;</span>
+    </button>
+  </div>
+  <div class="page-head">
+    <h1 class="page-title">MISC.</h1>
+  </div>
+  <nav class="topnav">
+    <a href="about.html">About</a>
+    <a href="works.html">Works</a>
+    <a href="cv.html">CV</a>
+  </nav>
+</header>
+
+<!-- ===== 30 / 40 / 30 ===== -->
+<div class="page">
+  <main class="main">
+
+    <hr class="divider">
+
+    <div class="space-1"></div>
+
+    <div class="misc-text">
+      <p>First paragraph.</p>
+
+      <p>Second paragraph.</p>
+    </div>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

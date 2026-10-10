@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="Vivienne Z. | About">
+<title>About — Vivienne Z.</title>
+<link rel="stylesheet" href="style.css">
+<script>
+try {
+  var light = localStorage.getItem('theme') === 'light';
+  var root = document.documentElement;
+  if (light) root.setAttribute('data-theme', 'light');
+  root.style.backgroundColor = light ? '#F3F1E4' : '#16160b';
+  root.style.colorScheme = light ? 'light' : 'dark';
+} catch (e) {}
+</script>
+</head>
+
+<body>
+
+<!-- ===== pinned top bar ===== -->
+<header class="topbar">
+  <div class="topbar-start">
+    <a class="home" href="index.html" aria-label="Back to home">
+      <span class="home-icon" aria-hidden="true">&#x1F4CC;</span>
+    </a>
+    <button type="button" class="theme-toggle" aria-label="Switch to light mode" aria-pressed="false">
+      <span class="theme-icon" aria-hidden="true">&#x2600;</span>
+    </button>
+  </div>
+  <div class="page-head">
+    <h1 class="page-title">ABOUT</h1>
+  </div>
+  <nav class="topnav">
+    <a href="works.html">Works</a>
+    <a href="cv.html">CV</a>
+  </nav>
+</header>
+
+<!-- ===== 30 / 40 / 30 ===== -->
+<div class="page">
+  <main class="main">
+
+    <hr class="divider">
+
+    <div class="space-1"></div>
+
+    <!-- Resize with .about-img in style.css, or add width="" here. -->
+    <img class="about-img" src="image/about.jpeg" alt="">
+
+    <div class="space-1"></div>
+
+    <div class="about-text">
+      <p>I'm a fourth-year student in Linguistics at the University of Chicago, with a minor in Computer Science.
+        I'm interested in human and machine pragmatics, how information beyond literal meaning is communicated obliquely,
+        and LLMs' capacities and shortcomings as social agents and companions, as well as in the psychological and social effects they may have on users through the mediation of language over long-term use.
+        Ultimately, I hope to contribute to a society that treats the question of what coexistence we want with entities that appear alien and other to us, such as AI systems, with informed consideration and intentionality,
+        supported by an understanding of how language shapes one's experience and perception of reality.
+    </p>
+
+      <p>Currently, I'm working on a formal account of responses to speech acts that are relevant but do not address the at-issue topic,
+        under the supervision of Prof. Chris Kennedy. I'm also conducting an interpretability project that aims to identify model components
+        contributing to a language model's responsiveness to commissive acts (e.g. promises). Previously, I worked on the <a href="https://dajingarchive.wordpress.com/" target="_blank" rel="noopener">documentation</a> of Dajing,
+        a southern Wu language spoken in southeastern China, and assisted with research on cue weighting and language variation in the Phonology Laboratory directed by Prof. Alan Yu.
+    </p>
+
+    <p>
+        I'm based in Montreal, Canada. I also enjoy making <a href="gallery.html">art</a>, (recreational) bridge, and Dostoevsky.</p>
+    <p> You can reach me at vzhang2 [at] uchicago [dot] edu.
+    </p>
+    </div>
+
+<!--    <div class="space-1"></div>
+    <figure class="gallery-item">
+        <img src="image/dos.png" alt="">
+      </figure> -->
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

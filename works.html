@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="Selected research and creative projects.">
+<title>Works — Vivienne Z.</title>
+<link rel="stylesheet" href="style.css">
+<script>
+try {
+  var light = localStorage.getItem('theme') === 'light';
+  var root = document.documentElement;
+  if (light) root.setAttribute('data-theme', 'light');
+  root.style.backgroundColor = light ? '#F3F1E4' : '#16160b';
+  root.style.colorScheme = light ? 'light' : 'dark';
+} catch (e) {}
+</script>
+</head>
+
+<body>
+
+<!-- ===== pinned top bar ===== -->
+<header class="topbar">
+  <div class="topbar-start">
+    <a class="home" href="index.html" aria-label="Back to home">
+      <span class="home-icon" aria-hidden="true">&#x1F4CC;</span>
+    </a>
+    <button type="button" class="theme-toggle" aria-label="Switch to light mode" aria-pressed="false">
+      <span class="theme-icon" aria-hidden="true">&#x2600;</span>
+    </button>
+  </div>
+  <div class="page-head">
+    <h1 class="page-title">WORKS</h1>
+    <!-- Optional tagline -->
+    <p class="page-tagline">Selected research and creative projects.</p>
+  </div>
+  <nav class="topnav">
+    <a href="about.html">About</a>
+    <a href="cv.html">CV</a>
+  </nav>
+</header>
+
+<!-- ===== 30 / 40 / 30 ===== -->
+<div class="page">
+  <main class="main">
+
+    <!-- ==========================================================
+         Set data-type to "academic" or "creative"
+         ========================================================== -->
+
+    <nav class="work-filters" aria-label="Filter works">
+      <button type="button" data-filter="all" class="is-active" aria-pressed="true">All</button>
+      <button type="button" data-filter="academic" aria-pressed="false">Academic</button>
+      <button type="button" data-filter="creative" aria-pressed="false">Creative</button>
+    </nav>
+
+    <article class="work" data-type="academic">
+      <div class="cols">
+        <div class="col-title">The Chameleon's Limit: Investigating "Persona Collapse" and Homogenization in Large Language Models (2026)</div>
+        <div class="col-body">
+        <p>This paper investigates the phenomenon of <i>persona collapse</i>, a population-level homogenization in model-generated data points that fail to evenly occupy the human distribution.
+           We propose a geometric framework to quantify population diversity of simulated personasa and systematically measure persona collapse.
+        (Accepted at UserSim @ NeurIPS 2026)
+        </p>
+        <p>Authors: Yunze Xiao<sup>&dagger;</sup>, Vivienne J. Zhang<sup>&dagger;</sup>, Chenghao Yang, Ningshan Ma, Weihao Xuan, Jen-tse Huang (<sup>&dagger;</sup>: equal contribution)</p>
+          <p class="work-links">
+            <a href="https://arxiv.org/abs/2604.24698v1" target="_blank">Preprint</a>
+            <a href="https://github.com/Algoroxyolo/PersonaCollapse" target="_blank" rel="noopener">Code</a>
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <article class="work" data-type="academic">
+        <div class="cols">
+          <div class="col-title">FELICITYBENCH: Pragmatic (In)felicity Sensitivity in LLMs (2026)        </div>
+          <div class="col-body">
+            <p>We introduce FELICITYBENCH, a benchmark for evaluating large language models' pragmatic competence with respect to felicity conditions, the contextual and social requirements that must be satisfied for a speech act to be successfully performed. Term paper for course Natural Language Processing.
+          </p>
+            <p>Co-Authored with Surya Chinnappa. </p>
+            <p class="work-links">
+              <a href="files/felicitybench.pdf" target="_blank">PDF</a>
+             </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="work" data-type="creative">
+        <div class="work-series" data-series>
+          <div class="series-frame">
+            <img class="series-img is-active" src="image/WR1.png" alt="">
+            <img class="series-img" src="image/WR2.png" alt="">
+            <img class="series-img" src="image/WR5.png" alt="">
+            <img class="series-img" src="image/WR6.png" alt="">
+            <img class="series-img" src="image/WR3.png" alt="">
+            <button class="series-nav prev" type="button" aria-label="Previous image">&larr;</button>
+            <button class="series-nav next" type="button" aria-label="Next image">&rarr;</button>
+          </div>
+          <div class="series-count"><span class="cur">1</span> / <span class="total">6</span></div>
+        </div>
+        <div class="cols">
+          <div class="col-title">Wind Rose (2026) </div>
+          <div class="col-body">
+            <p>Traverse a dreamscape alongside your companion.</p>
+            <p>Independently produced interactive fiction game (completed; undergoing major revisions).</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="work" data-type="creative">
+        <img class="work-img" src="image/beaumont-start.png" alt="">
+        <div class="cols">
+          <div class="col-title">Beaumont (2026)</div>
+          <div class="col-body">
+            <p>An interactive fiction game produced by Sophia Gnadinger, Jessie Liu, Julia Perez, Cynthia Wang, and Vivienne Zhang.</p>
+            <p><a href="Beaumont/Beaumont_final.html" target="_blank">Play game</a></p>
+          </div>
+        </div>
+      </article>
+
+      <article class="work" data-type="academic">
+        <div class="cols">
+          <div class="col-title">Dajing Documentation Project (2025)        </div>
+          <div class="col-body">
+            <p>The project website hosts information collected during the first field trip to document the Dajing dialect in summer 2025.
+                The goal of this project is to support the preservation and revitalisation of Dajing,
+                an underdocumented Wu dialect spoken in Dajing Town, Xianxi Town and surrounding areas.
+                The materials currently presented on this site are preliminary fieldwork results.
+            </p>
+            <p class="work-links">
+              <a href="https://dajingarchive.wordpress.com/" target="_blank" rel="noopener">Website</a>
+              <a href="files/Dajing-meta-documentation.pdf" target="_blank">Meta-documentation</a>
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="work" data-type="creative">
+        <div class="cols">
+          <div class="col-title">Morenthian - constructed language (2024)        </div>
+          <div class="col-body">
+            <p>Morenthian is a work-in-progress artlang developed for world-building purposes.
+                It is an a priori language designed to be spoken by a group of humans in a fictional world.
+                The description in the conlang document provides a rough sketch of the most current version of Morenthian.
+            </p>
+            <p class="work-links">
+              <a href="files/Morenthian_2024.pdf" target="_blank">A brief introduction to the Morenthian grammar</a>
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="work" data-type="creative">
+        <img class="work-img" src="image/HBC.png" alt="">
+        <div class="cols">
+          <div class="col-title">Final Boarding Call (2023) </div>
+          <div class="col-body">
+            <p>The graphic novel, <i>Final Boarding Call</i>, is a story about separation, grief and yearning. </p>
+            <p>Available on <a href="https://www.amazon.ca/dp/1990519121?ref=cm_sw_r_ffobk_cp_ud_dp_NJ3255FBXE513YKBWQ57&ref_=cm_sw_r_ffobk_cp_ud_dp_NJ3255FBXE513YKBWQ57&social_share=cm_sw_r_ffobk_cp_ud_dp_NJ3255FBXE513YKBWQ57&bestFormat=true" target="_blank">Amazon</a>.
+            </p>
+          </div>
+        </div>
+      </article>
+
+    <!-- ===== with a slideshow =====
+         Add or remove <img> lines; the first keeps "is-active".
+    <article class="work">
+      <div class="work-series" data-series>
+        <div class="series-frame">
+          <img class="series-img is-active" src="placeholder.svg" alt="">
+          <img class="series-img" src="placeholder.svg" alt="">
+          <img class="series-img" src="placeholder.svg" alt="">
+          <button class="series-nav prev" type="button" aria-label="Previous image">&larr;</button>
+          <button class="series-nav next" type="button" aria-label="Next image">&rarr;</button>
+        </div>
+        <div class="series-count"><span class="cur">1</span> / <span class="total">3</span></div>
+      </div>
+      <div class="cols">
+        <div class="col-title">Title of the Work</div>
+        <div class="col-body">
+          <p>2026. Medium, dimensions.</p>
+          <p>A short description of the project — what it is, where it
+          was shown, who it was made with.</p>
+        </div>
+      </div>
+    </article> -->
+
+    <!-- ===== no image, with links =====
+    <article class="work">
+      <div class="cols">
+        <div class="col-title">Another Work, No Image</div>
+        <div class="col-body">
+          <p>2025. Medium, dimensions.</p>
+          <p>A short description of the project.</p>
+          <p class="work-links">
+            <a href="project-name.html">Project page</a>
+            <a href="https://example.com" target="_blank" rel="noopener">Website</a>
+            <a href="project-name.pdf" target="_blank">PDF</a>
+          </p>
+        </div>
+      </div>
+    </article> -->
+
+    <!-- ===== with one image =====
+    <article class="work">
+      <img class="work-img" src="placeholder.svg" alt="">
+      <div class="cols">
+        <div class="col-title">A Third Work With a Longer Title</div>
+        <div class="col-body">
+          <p>2024. Medium, dimensions.</p>
+          <p>A short description of the project.</p>
+        </div>
+      </div>
+    </article> -->
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
